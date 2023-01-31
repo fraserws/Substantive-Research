@@ -42,12 +42,12 @@ const PieChartStats = () => {
       );
     }
   }, []);
-
-  //calculate the percentage for each
+  //@ts-ignore
   const total = uniqueNames.reduce((acc: any, current: any) => {
     return acc + current.count;
   }, 0);
 
+  //@ts-ignore
   const percentage = uniqueNames.map((item: any) => {
     const percentage = Math.round((item.count / total) * 100);
     return { name: item.name, percentage: percentage };

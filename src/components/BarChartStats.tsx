@@ -20,7 +20,7 @@ const BarChartStats = () => {
     );
   if (isError) return <div>Error</div>;
 
-  //console log all unique names and their count
+  //@ts-ignore
   const uniqueNames = data.reduce((acc: any, current: any) => {
     const x = acc.find((item: any) => item.name === current.name);
     if (!x) {

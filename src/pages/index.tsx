@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import BarChartStats from "../components/BarChartStats";
 import PieChartStats from "../components/PieChartStats";
 import Sidebar from "../components/Sidebar";
 import Table from "../components/Table";
@@ -12,9 +13,12 @@ const Home: NextPage = () => {
         <meta name="description" content="Dashboard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex   flex-row">
+      <main className="flex flex-row">
         <Sidebar />
-        <PieChartStats />
+        <div>
+          <PieChartStats />
+          <BarChartStats />
+        </div>
         <Table />
       </main>
     </>
