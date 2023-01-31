@@ -52,7 +52,7 @@ const PieChartStats = () => {
   });
 
   return (
-    <div className="px-10">
+    <div className="px-10 pt-6">
       <h1 className="text-2xl font-bold">Percentage Breakdown</h1>
       <PieChart width={700} height={400}>
         <Pie
