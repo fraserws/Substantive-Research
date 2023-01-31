@@ -31,12 +31,14 @@ const PieChartStats = () => {
     );
   if (isError) return <div>Error</div>;
 
-  //console log all unique names and calculate the percentage for each
+  //@ts-ignore
   const uniqueNames = data.reduce((acc: any, current: any) => {
+    //@ts-ignore
     const x = acc.find((item: any) => item.name === current.name);
     if (!x) {
       return acc.concat([{ name: current.name, count: 1 }]);
     } else {
+      //@ts-ignore
       return acc.map((item: any) =>
         item.name === current.name ? { ...item, count: item.count + 1 } : item
       );
