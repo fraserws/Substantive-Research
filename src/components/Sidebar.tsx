@@ -12,6 +12,7 @@ function Sidebar() {
           <span className="ml-2 ">Docs</span>
           <span className="ml-2 ">Products</span>
           <span className="ml-2 ">Settings</span>
+          <span className="ml-2 ">Account</span>
         </div>
       </div>
     </div>
