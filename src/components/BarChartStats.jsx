@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
 const fetchAll = async () => {
-  const res = await fetch("http://substantiveresearch.pythonanywhere.com/");
+  const res = await fetch("https://substantiveresearch.pythonanywhere.com/");
   return await res.json();
 };
 

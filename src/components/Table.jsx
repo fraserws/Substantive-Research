@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { DataGrid } from "@mui/x-data-grid";
 
 const fetchAll = async () => {
-  const res = await fetch("http://substantiveresearch.pythonanywhere.com/");
+  const res = await fetch("https://substantiveresearch.pythonanywhere.com/");
   return await res.json();
 };
 
