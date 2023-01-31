@@ -7,17 +7,6 @@ const fetchAll = async () => {
 };
 
 const BarChartStats = () => {
-  //daisyui colors
-  const COLORS = [
-    "#3ABFF8",
-    "#828DF8",
-    "#F471B5",
-    "#0CA6E9",
-    "#3BD4BD",
-    "#a78bfa",
-    "#f472b6",
-  ];
-
   const { data, isLoading, isError } = useQuery(
     ["date", "name", "sector_id"],
     fetchAll
@@ -52,7 +41,7 @@ const BarChartStats = () => {
           <YAxis />
           <XAxis dataKey="name" hide />
           <Tooltip />
-          <Bar dataKey="count" fill={COLORS[0]} />
+          <Bar dataKey="count" fill="#3ABFF8" />
         </BarChart>
       </div>
     </>
