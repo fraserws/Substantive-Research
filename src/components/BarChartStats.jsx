@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { useQuery } from "react-query";
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
@@ -20,15 +21,12 @@ const BarChartStats = () => {
     );
   if (isError) return <div>Error</div>;
 
-  //@ts-ignore
-  const uniqueNames = data.reduce((acc: any, current: any) => {
-    //@ts-ignore
-    const x = acc.find((item: any) => item.name === current.name);
+  const uniqueNames = data.reduce((acc, current) => {
+    const x = acc.find((item) => item.name === current.name);
     if (!x) {
       return acc.concat([{ name: current.name, count: 1 }]);
     } else {
-      //@ts-ignore
-      return acc.map((item: any) =>
+      return acc.map((item) =>
         item.name === current.name ? { ...item, count: item.count + 1 } : item
       );
     }

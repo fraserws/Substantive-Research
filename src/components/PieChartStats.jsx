@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { useQuery } from "react-query";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
@@ -31,26 +32,21 @@ const PieChartStats = () => {
     );
   if (isError) return <div>Error</div>;
 
-  //@ts-ignore
-  const uniqueNames = data.reduce((acc: any, current: any) => {
-    //@ts-ignore
-    const x = acc.find((item: any) => item.name === current.name);
+  const uniqueNames = data.reduce((acc, current) => {
+    const x = acc.find((item) => item.name === current.name);
     if (!x) {
       return acc.concat([{ name: current.name, count: 1 }]);
     } else {
-      //@ts-ignore
-      return acc.map((item: any) =>
+      return acc.map((item) =>
         item.name === current.name ? { ...item, count: item.count + 1 } : item
       );
     }
   }, []);
-  //@ts-ignore
-  const total = uniqueNames.reduce((acc: any, current: any) => {
+  const total = uniqueNames.reduce((acc, current) => {
     return acc + current.count;
   }, 0);
 
-  //@ts-ignore
-  const percentage = uniqueNames.map((item: any) => {
+  const percentage = uniqueNames.map((item) => {
     const percentage = Math.round((item.count / total) * 100);
     return { name: item.name, percentage: percentage };
   });
@@ -69,7 +65,7 @@ const PieChartStats = () => {
           fill="#8884d8"
           dataKey={"percentage"}
         >
-          {uniqueNames.map((entry: any, index: any) => (
+          {uniqueNames.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>

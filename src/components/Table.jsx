@@ -21,7 +21,7 @@ const Table = () => {
     { field: "sector_id", headerName: "Sector ID", width: 150 },
   ];
 
-  const rows = data.map((item: any) => {
+  const rows = data.map((item) => {
     return {
       date: item.date,
       name: item.name,
@@ -44,7 +44,7 @@ const Table = () => {
           columns={columns}
           pageSize={25}
           checkboxSelection
-          getRowId={(row: any) => row.date + row.name}
+          getRowId={(row) => row.date + row.name}
         />
       </div>
     </div>
