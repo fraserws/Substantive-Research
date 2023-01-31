@@ -46,7 +46,7 @@ const BarChartStats = () => {
 
   return (
     <>
-      <h1 className="px-10 text-2xl font-bold">Percentage Breakdown</h1>
+      <h1 className="px-10 text-2xl font-bold">Count</h1>
       <div>
         <BarChart width={600} height={400} data={uniqueNames}>
           <YAxis />
